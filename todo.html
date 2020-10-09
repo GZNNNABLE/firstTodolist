@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Todo项目</title>
+        <title>GZN's TodoList</title>
         <link rel="stylesheet" href="todo.css">
     </head>
     <body>
@@ -10,9 +10,15 @@
             
             <input class="input" type="text">
             <button class="addBtn">添加</button>
+            
             <hr style="height:1px;border-top:1px solid #8db1d38a;" />
+            
+            <input class="checkbox1" type="checkbox" id="allChecks"  /> 全选
+            <input class="checkbox2" type="checkbox" id="noneCheck">全不选
             <div class='todoContainer'>
+                
                 <!-- <div class='todo-cell'>
+                    <input class="focus" type="checked">
                     <span class='todo-label' contenteditable='false'>${todo.task}</span>
                     <span class='todo-date-time'>${todo.time}</span>
                     <button class='todo-done'>完成</button>
@@ -21,7 +27,7 @@
                 
                 </div> -->
             </div>
-            
+            <button class="deleteAllCkd" id="dltall" onclick="deleteAllCheck()">批量删除</button>
             <!-- 在这里写 -->
 
         

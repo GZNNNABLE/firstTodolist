@@ -81,6 +81,8 @@ var insertTodo = function(todo){
 var templateTodo = function(todo){
     var t =`
     <div class='todo-cell'>
+    <input class="focus" type="checkbox" name="check">
+    
     <span class='todo-label' contenteditable='false'>${todo.task}</span>
     <span class='todo-date-time'>${todo.time}</span>
     <button class='todo-done'>完成</button>
@@ -91,6 +93,56 @@ var templateTodo = function(todo){
     `
     return t
 } 
+var checkAll = function(){
+    addEventListener("click",function(){
+        var flag=document.getElementById("allChecks").checked;
+        var cks=document.getElementsByName("check")
+        
+        if(flag){
+		for(var i=0;i<cks.length;i++){
+			cks[i].checked=flag;}}
+    })
+}
+var noneCheck = function(){
+    addEventListener("click",function(){
+        var flag=document.getElementById("noneCheck").checked;
+        var cks=document.getElementsByName("check")
+        
+        if(flag)
+		for(var i=0;i<cks.length;i++){
+			cks[i].checked=false;}
+    })
+}
+var deleteAllCheck = function(){
+   
+    var cks = document.getElementsByName("check")
+
+    console.log(cks.length)
+    for(var i=cks.length-1;i>=0;i--){
+        if(cks[i].checked){
+            console.log(cks[i].checked)
+            var par =cks[i].parentElement
+            console.log(par)
+            par.remove()
+
+
+
+
+            
+            
+    }
+}
+}
+//     var item = $(".focus:checked")
+//     var len = items.length
+//     for (var i=0;i<len;i++){
+//         $(items[i]).parents(".item").remove()
+//     }
+// }
+
+  
 bindEventAdd()
 bindEventButton()
 bindEventBlur()
+checkAll()
+noneCheck()
